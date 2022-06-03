@@ -1,0 +1,912 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>L51 Firmware Family - Revision History</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:PMingLiU;
+	panose-1:2 2 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:MingLiU;
+	panose-1:2 2 5 9 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@PMingLiU";
+	panose-1:2 1 6 1 0 1 1 1 1 1;}
+@font-face
+	{font-family:"\@MingLiU";
+	panose-1:2 1 6 9 0 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:normal;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+pre
+	{mso-style-link:"HTML Preformatted Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-link:"HTML Preformatted";
+	font-family:"Calibri",sans-serif;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"Times New Roman",serif;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"Times New Roman",serif;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.msolistparagraphcxspfirst, li.msolistparagraphcxspfirst, div.msolistparagraphcxspfirst
+	{mso-style-name:msolistparagraphcxspfirst;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.msolistparagraphcxspmiddle, li.msolistparagraphcxspmiddle, div.msolistparagraphcxspmiddle
+	{mso-style-name:msolistparagraphcxspmiddle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.msolistparagraphcxsplast, li.msolistparagraphcxsplast, div.msolistparagraphcxsplast
+	{mso-style-name:msolistparagraphcxsplast;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.offset, li.offset, div.offset
+	{mso-style-name:offset;
+	margin-right:0in;
+	margin-left:24.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.footer, li.footer, div.footer
+	{mso-style-name:footer;
+	margin-right:0in;
+	margin-left:0in;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+span.1
+	{mso-style-name:"\6A19\984C 1 \5B57\5143";
+	mso-style-link:"\6A19\984C 1";
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+p.10, li.10, div.10
+	{mso-style-name:"\6A19\984C 1";
+	mso-style-link:"\6A19\984C 1 \5B57\5143";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.2
+	{mso-style-name:"\6A19\984C 2 \5B57\5143";
+	mso-style-link:"\6A19\984C 2";
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+p.20, li.20, div.20
+	{mso-style-name:"\6A19\984C 2";
+	mso-style-link:"\6A19\984C 2 \5B57\5143";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.3
+	{mso-style-name:"\6A19\984C 3 \5B57\5143";
+	mso-style-link:"\6A19\984C 3";
+	font-family:"Cambria",serif;
+	font-weight:bold;}
+p.30, li.30, div.30
+	{mso-style-name:"\6A19\984C 3";
+	mso-style-link:"\6A19\984C 3 \5B57\5143";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.a
+	{mso-style-name:"\9801\9996 \5B57\5143";
+	mso-style-link:\9801\9996;}
+p.a0, li.a0, div.a0
+	{mso-style-name:\9801\9996;
+	mso-style-link:"\9801\9996 \5B57\5143";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.a1
+	{mso-style-name:"\9801\5C3E \5B57\5143";
+	mso-style-link:\9801\5C3E;}
+p.a2, li.a2, div.a2
+	{mso-style-name:\9801\5C3E;
+	mso-style-link:"\9801\5C3E \5B57\5143";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.11
+	{mso-style-name:"\7D14\6587\5B57 \5B57\51431";
+	mso-style-link:\7D14\6587\5B57;
+	font-family:"Calibri",sans-serif;}
+p.a3, li.a3, div.a3
+	{mso-style-name:\7D14\6587\5B57;
+	mso-style-link:"\7D14\6587\5B57 \5B57\51431";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.a4
+	{mso-style-name:"\8A3B\89E3\65B9\584A\6587\5B57 \5B57\5143";
+	mso-style-link:\8A3B\89E3\65B9\584A\6587\5B57;
+	font-family:"Cambria",serif;}
+p.a5, li.a5, div.a5
+	{mso-style-name:\8A3B\89E3\65B9\584A\6587\5B57;
+	mso-style-link:"\8A3B\89E3\65B9\584A\6587\5B57 \5B57\5143";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+span.a6
+	{mso-style-name:"\7D14\6587\5B57 \5B57\5143";
+	font-family:MingLiU;}
+span.21
+	{mso-style-name:"\7D14\6587\5B57 \5B57\51432";
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body bgcolor=white lang=EN-GB>
+
+<div class=WordSection1>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="100%"
+ style='width:100.0%'>
+ <tr style='height:1.25in'>
+  <td width=120 style='width:1.25in;padding:.75pt .75pt .75pt .75pt;height:
+  1.25in'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-family:"Arial",sans-serif'><img width=72 height=72
+  src="HP_Logo.gif"
+  alt="Description: Description: Description: Description: Description: HP Logo"></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:1.25in'>
+  <h1 align=center style='text-align:center'><b><span style='font-size:24.0pt;
+  font-family:"Arial",sans-serif;color:#015294'>L51 System Firmware (BIOS)
+  Family - Revision History</span></b></h1>
+  </td>
+ </tr>
+</table>
+
+<h2><b><span lang=EN-US style='font-size:18.0pt;font-family:"Arial",sans-serif;
+color:#015294'>Models supported</span></b></h2>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>HP
+     Z230 Tower Workstation</span></b></li>
+ <li class=MsoNormal style='margin-top:6.0pt'><b><span lang=EN-US
+     style='font-family:"Arial",sans-serif'>HP Z230 SFF Workstation</span></b></li>
+ <li class=MsoNormal style='margin-top:6.0pt'><b><span lang=EN-US
+     style='font-family:"Arial",sans-serif'>HP Z228 Workstation</span></b></li>
+</ul>
+
+<h2 style='margin-top:24.0pt'><b><span lang=EN-US style='font-size:18.0pt;
+font-family:"Arial",sans-serif;color:#015294'>History</span></b></h2>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.63</span></b></h3>
+
+<p class=MsoNormal style='margin-left:27.0pt'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Updates Intel CPU Microcode to 0x28.</span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Includes enhancements to mitigate
+security vulnerabilities CVE-2020-0543, CVE-2020-0548, CVE-2020-0549,
+CVE-2020-0528 and CVE-2020-0529.</span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>HP strongly recommends promptly
+transitioning to this updated BIOS version</span><span lang=EN-US>.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.62</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Updates
+Intel CPU Microcode to 0x27.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Includes
+enhancements to mitigate security vulnerabilities CVE-2018-12126,
+CVE-2018-12127, CVE-2018-12130 and CVE-2019-11091.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where the boot HDD is incorrectly reported as “other” in EFI boot
+order reported by BiosConfigUtility and Replicated Setup.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.61</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Updates
+Intel CPU Microcode to 0x25.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Includes
+enhancement to mitigate CVE-2018-3639 and CVE-2018-3640.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where PCR2 values could change causing BitLocker to enter recovery
+mode.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.59</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><a name="_Hlk501557872"><span lang=EN-US style='font-family:
+"Arial",sans-serif'>Updates Intel CPU Microcode to 0x24.</span></a></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Includes
+enhancement to mitigate CVE-2017-5715. HP strongly recommends promptly
+transitioning to this updated BIOS version.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.58</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Reverts
+Intel processor microcode to 0x1D.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Updates
+Intel LOM UEFI driver to v0.0.18.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where EFI PXE boot would fail after reboot with AMT disabled.</span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;layout-grid-mode:char'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>Fix the Fort Knox issue 17B4:
+Wake-on LAN bypasses Power-on Password arbitrarily.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.57</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Update
+the microcode to M32306C3_00000023</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fix
+the changes of some UEFI variable formats after v1.55 cause abnormal booting
+behaviors.</span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;layout-grid-mode:char'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>Fix an issue that TPM is not
+found in Windows, when set TPM is &quot;Hidden&quot; in F10 then changes TPM
+state to &quot;Available&quot; via BCU in Windows.</span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;layout-grid-mode:char'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>Fix the Fort Knox issue 17B4:
+Wake-on LAN bypasses Power-on Password arbitrarily.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.55</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>This
+release includes updates to address “Microsoft Secure Boot Security Feature
+Bypass” as described in CVE-2016-3287 and CVE-2016-3320. HP strongly recommends
+promptly transitioning to this updated BIOS version which supersedes all
+previous releases</span><span lang=EN-US style='color:black'>.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Updates
+UEFI Network Stack to resolve issue when attempting to PXE boot with Secure
+Boot enabled.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.54</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>WARNING: After installing
+this BIOS version onto the system, prior BIOS versions cannot be installed onto
+the system.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt' '=""
+margin-left:.75in;text-indent:-27.0pt;=""><span lang=EN-US style='font-family:
+"Arial",sans-serif'>This release improves security of UEFI code and variables
+and includes mitigation for the following vulnerabilities.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+-ms-text-autospace:'><span lang=EN-US style='font-family:"Arial",sans-serif'>HP
+strongly recommends promptly transitioning to these updated BIOS versions which
+supersede all previous releases.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+-ms-text-autospace:'><span lang=EN-US style='font-family:"Arial",sans-serif'>Intel-TA
+DOC #548744</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+-ms-text-autospace:'><span lang=EN-US style='font-family:"Arial",sans-serif'>VU#631788</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+-ms-text-autospace:'><span lang=EN-US style='font-family:"Arial",sans-serif'>VU#766164</span></p>
+
+<p class=MsoNormal style='margin-left:31.5pt;text-indent:-4.5pt;-ms-text-autospace:'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>VU#976132</span><b><span
+lang=EN-US style='font-size:13.5pt;color:#015294'>&nbsp;</span></b></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.53</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-27.0pt;
+line-height:115%;text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Updates
+Intel GOP driver to v5.5.1033.</span></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-27.0pt;
+line-height:115%;text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Updates
+Intel vBIOS to v5.5.1039.</span></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-27.0pt;
+line-height:115%;text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Updates
+Legacy PXE Option ROM to v1.5.56.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where a Thunderbolt card is identified incorrectly in F10 Setup.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where system would not be assigned IP address during PXE boot.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where KVM sessions would not display graphics output, then close
+shortly after boot.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where power loss during MEFW update may make ME permanently
+unavailable.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.52</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-27.0pt;
+line-height:115%;text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Adds
+support for Microsoft Windows 10.</span></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-27.0pt;
+line-height:115%;text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Adds
+the ability to disable the Option ROM for the embedded NIC.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where system could not access WebBIOS utility with certain RAID
+controller cards.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where user would receive an error message when attempting to read fan
+speeds via WMI (Z230 SFF only).</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.42</span></b></h3>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>WARNING: After installing this BIOS
+version onto the system, prior BIOS versions cannot be installed onto the
+system. </span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+a security vulnerability where UEFI variables can be overwritten which could
+potentially lead to bypass of security features or denial of service. HP
+strongly recommends transitioning promptly to this updated BIOS version.</span></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-27.0pt;
+line-height:115%;text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Update
+Haswell C0 CPU microcode to 0x1C.</span></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-27.0pt;
+line-height:115%;text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Update
+Intel GOP driver to 5.5.1027</span></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-27.0pt;
+line-height:115%;text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Update
+Intel vBIOS to 5.5.1031</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Enables
+Secure Erase support with Z Turbo Drive PCIe-based SSD storage solution. </span></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;text-indent:-27.0pt;
+line-height:115%;text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Adds
+support for future Z Turbo Drive versions. </span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue which resulted in &quot;fan not detected&quot; error after AC power
+cycle. </span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where POST screen was blurred with certain graphics cards. </span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Fixes
+an issue where BitLocker would issue an error message stating that the system
+configuration changed every boot. </span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>Fixes an issue where system
+would hang during large file transfers with AMT enabled. </span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.40</span></b></h3>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>WARNING: After installing this BIOS
+version onto the system, prior BIOS versions cannot be installed onto the
+system. </span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Provides improved security for UEFI
+EDK2. HP strongly recommends transitioning promptly to this updated BIOS
+version.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.33</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Updates Intel processor uCode to 0x1A.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Updates Intel MEBX to v9.0.0.0029.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Updates Intel GOP driver to v5.0.1037.</span><span lang=EN-US>.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Updates Intel VBIOS to v1028.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Increases amount of available system memory when Thunderbolt card
+is not installed.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Modifies memory speed information to report actual speed rather
+than SPD information.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where the &quot;Update Address&quot; setting was
+missing from WMI.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where the HP Z Turbo Drive (PCIe-based SSD storage
+solution) and some graphics cards were shown in system tray as removable
+devices.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where the HP Z Turbo Drive with DriveLock enabled
+would not work after S3 resume.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where 15-in-1 Media Card Reader info was not shown
+in F10 menu.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where Happauge TV tuner PCIe cards were not detected
+by the system.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where Teradici TERA2220 PCoIP host card would hang
+after reboot.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where DisplayPort port D would not work with
+certain processors (Z230 SFF only).</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where system would hang at POST (no display) with
+certain combinations of DisplayPort and DVI monitors.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where the system would hang after booting from
+Optical Drive with IDE mode.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Fixes an issue where broadcasting ARP replies caused a large
+amount of unnecessary network traffic.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>Disables PCIe root port Latency Tolerance Reporting (LTR) to
+eliminate blue screen failure after hibernation.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.31</span></b></h3>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>WARNING: After installing this BIOS version
+onto the system, prior BIOS versions cannot be installed onto the system. </span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Provides improved security for UEFI
+EDK2. HP strongly recommends transitioning promptly to this updated BIOS
+version.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.23</span></b></h3>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fixed issue where system would fail to
+boot due to Windows 7 OS boot loader failure (error code 0xc0000225) error.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.22</span></b></h3>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Support Z turbo drive for Wonders.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Update Intel reference code to 1.7</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fix Thunderbolt Security modes do not
+change as expected</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Impletment Repsetup/WMI Legacy HDD
+order.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Add more POST delay options in BIOS
+setup menu.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fix 6 beeps error without monitor
+connected when using IGD and GOP mode enabled.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.18</span></b></h3>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Update processor uCode to 17</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Update to ME firmware v9.0.31.1487</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Update MEBX to v9.0.0.0028</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Update
+Wonders GOP driver to 5.0.1037 and VBIOS to v2179.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Separate
+password prompts for F9, F11, F12 (both F10 setup and WMI)</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Implemented
+OEM Activation 2.0</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Support VGA configuration in Repsetup
+and WMI/BCU interface and F10 Replicated Setup.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fix DOS RepSetup fails to set boot
+order.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Support
+Thunderbolt AiC.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Allow
+users to enable/disable OS TPM Reset without setting a password.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Support
+IGD pre-allocated memory size up to1024MB.</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.13</span></b></h3>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Support
+Windows 8.1</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Update
+ME firmware to v9.0.21.1462.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Update
+MEBX to v9.0.0.0025.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>Update RAID OROM &amp; UEFI
+version to 12.7.0.1936.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;text-autospace:none'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>Update GOP driver to 5.0.1035
+and VBIOS to v2178.</span></p>
+
+<p class=MsoListParagraph style='margin-left:27.0pt;line-height:115%;
+text-autospace:none'><span lang=EN-US style='font-family:"Arial",sans-serif'>Update
+Haswell C0 CPU microcode to 0x16.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fixed fails to boot Linux DVD install media
+when Secure Boot is enabled.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fixed there is no &quot;PCI Latency
+Timer&quot; option in HP performance tool.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Modify Password Prompt String in F10
+setup to match WMI.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Disabling Slot 1 in Slot Security will
+disable slot 3 with a nic card from waking from Magic Packet S3, S4 or S5</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fixed S4 will auto wake up if the USB KB
+/ MS is pressing during entering S4 ,.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fixed S4 resume may not come out of
+Hibernation sometimes.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Enable standard efficiency PSU
+detection.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Support Wonders ENP13 power supply fan
+cruve.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fixed iGFX's DP audio device will be
+lost after hot-plug under S0.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Define minimum fan speed for TaiMahal.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fixed the &quot;born on date&quot;
+display &quot;00000000&quot; in HP Perf A.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Update Intel reference code to 1.5</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Fixed HPPerf OROM launch policy does not
+match with BIOS.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Correct BCU cannot switch Slot3 Option
+ROM.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:27.0pt;
+margin-bottom:.0001pt;line-height:115%;text-autospace:none'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<h3 style='margin-top:12.0pt'><b><span lang=EN-US style='font-size:13.5pt;
+font-family:"Arial",sans-serif;color:#015294'>Version 1.02</span></b></h3>
+
+<p style='margin-left:41.65pt;text-indent:-.25in'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>Initial system firmware (BIOS) version.</span></p>
+
+<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=footer><span lang=EN-US style='font-family:"Arial",sans-serif'>©
+Copyright 2012 Hewlett-Packard Development Company, L.P. <br>
+Product names mentioned herein may be trademarks and/or registered trademarks
+of their respective companies. </span></p>
+
+</div>
+
+</body>
+
+</html>
