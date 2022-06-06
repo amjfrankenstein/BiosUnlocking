@@ -50,6 +50,9 @@ def spihpfullunlock():
 def clearfiles():
     process = subprocess.Popen("./clearfiles.sh")
 
+def dellsite():
+    process = subprocess.Popen("media/dellsite.sh")
+
 app = App(bg="grey", title="Alta E-Solutions BIOS HAX", height=600, width=900, layout="grid")
 
 picture1 = Picture(app, grid=[0,0,2,3], image="media/alogo.png")
@@ -127,10 +130,10 @@ picture1 = Picture(box4, image="media/alogo.png")
 text5= Text(box5, size=35)
 
 button5_1 = PushButton(box5, width=20, text="Clear Files/Reset", command=clearfiles)
-#button5_4 = PushButton(box5, width=20, text="", command=do_nothing)
+button5_2 = PushButton(box5, width=20, text="Open Dell Unlock Site", command=dellsite)
 #button5_5 = PushButton(box5, width=20, text="", command=do_nothing)
-button5_1.bg = "#b7c4b7"
-#button5_2.bg = "#ddeddd"
+button5_1.bg = "#ffadad"
+button5_2.bg = "#ddeddd"
 #button5_3.bg = "#ffadad"
 #button5_4.bg = "#ddeddd"
 #button5_5.bg = "#b7c4b7"
