@@ -1,2 +1,2 @@
 #!/bin/bash
-gnome-terminal -- /usr/bin/lynx https://beta.bios-pw.org/
+/usr/bin/firefox https://beta.bios-pw.org/
