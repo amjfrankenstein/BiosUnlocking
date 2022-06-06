@@ -78,7 +78,6 @@ text1 = Text(box1, size=24, color="#003800", text="Dediprog Menu")
 text2 = Text(box2, size=24, color="#003800",text="Linux SPI Menu")
 text3 = Text(box3, size=24, color="#003800", text="Lenovo Full Unlock")
 text4 = Text(box4, color="#003800")
-text5 = Text(box5, size=24, color="#003800", text="HP Full Unlock")
 text6 = Text(box6, color="#003800")
 #text7 = Text(box7, text="Box 7")
 ##text8 = Text(box8, text="Box 8")
@@ -109,28 +108,30 @@ button2_5.bg = "#b7c4b7"
 ##BOX3:::::::::::::::::::::::::::::::::::::::::::::::::::::
 button3_1 = PushButton(box3, width=20, text="SF100  IBM Full Unlock", command=dplenfullunlock)
 button3_2 = PushButton(box3, width=20, text="SPI:0 IBM Full Unlock", command=spilenfullunlock)
+text5 = Text(box3, size=24, color="#003800", text="HP Full Unlock")
+button3_3 = PushButton(box3, width=20, text="SF100 HP Full Unlock", command=dphpfullunlock)
+button3_4 = PushButton(box3, width=20, text="SPI:0 HP Full Unlock", command=spihpfullunlock)
 #button3_3 = PushButton(box3, width=20, text="", command=do_nothing)
 #button3_4 = PushButton(box3, width=20, text="", command=do_nothing)
 #button3_5 = PushButton(box3, width=20, text="", command=do_nothing)
 button3_1.bg = "#b7c4b7"
 button3_2.bg = "#ddeddd"
-#button3_3.bg = "#b7c4b7"
-#button3_4.bg = "#ddeddd"
+button3_3.bg = "#b7c4b7"
+button3_4.bg = "#ddeddd"
 #button3_5.bg = "#b7c4b7"
 
 picture1 = Picture(box4, image="media/alogo.png")
 
 ##BOX4:::::::::::::::::::::::::::::::::::::::::::::::::::::
-button5_1 = PushButton(box5, width=20, text="SF100 HP Full Unlock", command=dphpfullunlock)
-button5_2 = PushButton(box5, width=20, text="SPI:0 HP Full Unlock", command=spihpfullunlock)
+
 text5= Text(box5, size=35)
 
-button5_3 = PushButton(box5, width=20, text="Clear Files/Reset", command=clearfiles)
+button5_1 = PushButton(box5, width=20, text="Clear Files/Reset", command=clearfiles)
 #button5_4 = PushButton(box5, width=20, text="", command=do_nothing)
 #button5_5 = PushButton(box5, width=20, text="", command=do_nothing)
 button5_1.bg = "#b7c4b7"
-button5_2.bg = "#ddeddd"
-button5_3.bg = "#ffadad"
+#button5_2.bg = "#ddeddd"
+#button5_3.bg = "#ffadad"
 #button5_4.bg = "#ddeddd"
 #button5_5.bg = "#b7c4b7"
 

@@ -1,3 +1,0 @@
-#! /bin/bash
-
-python "$(dirname "$(realpath $0)")/patch/autopatch.py" "$@"
