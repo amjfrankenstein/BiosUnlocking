@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/firefox --new-window https://beta.bios-pw.org/
+gnome-terminal -- /usr/bin/lynx https://beta.bios-pw.org/
