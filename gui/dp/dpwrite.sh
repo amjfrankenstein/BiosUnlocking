@@ -15,7 +15,7 @@ else
 fi
 cd dp/unl/
 yad --height=250 --width=450 --form --title="Choose File" --field=File:FL --center > write.out
-write=$(cat write.out | sed 's/.$//') > write2.out
+write=$(cat write.out | sed 's/|//') 
 (dpcmd --type $chip -u $write -v | tee test.out) | zenity --progress --title="Flashing Chip..." --text="Writing to chip..." --width=200 --auto-close --auto-kill --pulsate --time-remaining --percentage=100
 if grep -q Error  test.out; then
      zenity --height=200 --width=350 --timeout=3 --error --text="Failed writing."

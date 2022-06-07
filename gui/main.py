@@ -53,9 +53,11 @@ def clearfiles():
 def dellsite():
     process = subprocess.Popen("media/dellsite.sh")
 
-def meclean():
-    process = subprocess.Popen("tools/meclean.sh")
+def dpmeclean():
+    process = subprocess.Popen("tools/dpmeclean.sh")
 
+def spimeclean():
+    process = subprocess.Popen("tools/spimeclean.sh")
 
 
 
@@ -137,11 +139,12 @@ text5= Text(box5, size=35)
 
 button5_1 = PushButton(box5, width=20, text="Clear Files/Reset", command=clearfiles)
 button5_2 = PushButton(box5, width=20, text="Open Dell Unlock Site", command=dellsite)
-#button5_5 = PushButton(box5, width=20, text="", command=do_nothing)
+button5_3 = PushButton(box5, width=20, text="SF100 me_cleaner", command=dpmeclean)
+button5_4 = PushButton(box5, width=20, text="SPI:0 me_cleaner", command=spimeclean)
 button5_1.bg = "#ffadad"
 button5_2.bg = "#ddeddd"
-#button5_3.bg = "#ffadad"
-#button5_4.bg = "#ddeddd"
+button5_3.bg = "#b7c4b7"
+button5_4.bg = "#ddeddd"
 #button5_5.bg = "#b7c4b7"
 
 picture2 = Picture(box6, image="media/alogo.png")
