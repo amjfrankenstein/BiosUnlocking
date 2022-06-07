@@ -1,0 +1,6 @@
+flashrom v1.2 on Linux 5.15.32-v7l+ (armv7l)
+flashrom is free software, get the source code at https://flashrom.org
+
+Using clock_gettime for delay loops (clk_id: 1, resolution: 1ns).
+Found Winbond flash chip "W25Q128.V" (16384 kB, SPI) on linux_spi.
+No operations were specified.
