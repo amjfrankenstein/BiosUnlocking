@@ -19,8 +19,8 @@ echo "::::::::::::::COMPARING::::::::::::::::"
 difference=$(diff fu/unl/fullread1.bin fu/unl/fullread2.bin)
 if [ -z "$difference" ]
 then
-    zenity --height=200 --width=350 --timeout=5 --info --text="Files Match."
+    zenity --height=200 --width=350 --timeout=3 --info --text="Files Match."
 else
-    zenity --height=200 --width=350 --timeout=5 --warning --text="Files do not Match."
+    zenity --height=200 --width=350 --timeout=3 --warning --text="Files do not Match."
 fi
 

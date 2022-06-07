@@ -53,6 +53,12 @@ def clearfiles():
 def dellsite():
     process = subprocess.Popen("media/dellsite.sh")
 
+def meclean():
+    process = subprocess.Popen("tools/meclean.sh")
+
+
+
+
 app = App(bg="grey", title="Alta E-Solutions BIOS HAX", height=600, width=900, layout="grid")
 
 picture1 = Picture(app, grid=[0,0,2,3], image="media/alogo.png")
