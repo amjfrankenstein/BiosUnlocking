@@ -56,8 +56,11 @@ def dellsite():
 def meclean():
     process = subprocess.Popen("tools/meclean.sh")
 
-#def spimeclean():
-#    process = subprocess.Popen("tools/spimeclean.sh")
+def compare():
+    process = subprocess.Popen("tools/compare.sh")
+
+def clearsaved():
+    process = subprocess.Popen("tools/clearsaved.sh")
 
 
 
@@ -135,17 +138,18 @@ picture1 = Picture(box4, image="media/alogo.png")
 
 ##BOX4:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-text5= Text(box5, size=35)
+text6= Text(box5, size=15)
 
 button5_1 = PushButton(box5, width=20, text="Clear Files/Reset", command=clearfiles)
 button5_2 = PushButton(box5, width=20, text="Open Dell Unlock Site", command=dellsite)
 button5_3 = PushButton(box5, width=20, text="Intel me_cleaner", command=meclean)
-#button5_4 = PushButton(box5, width=20, text="SPI:0 me_cleaner", command=spimeclean)
+button5_4 = PushButton(box5, width=20, text="Compare 2 Files", command=compare)
+button5_5 = PushButton(box5, width=20, text="Delete Saved Items", command=clearsaved)
 button5_1.bg = "#ffadad"
 button5_2.bg = "#ddeddd"
 button5_3.bg = "#b7c4b7"
-#button5_4.bg = "#ddeddd"
-#button5_5.bg = "#b7c4b7"
+button5_4.bg = "#ddeddd"
+button5_5.bg = "#ffadad"
 
 picture2 = Picture(box6, image="media/alogo.png")
 
