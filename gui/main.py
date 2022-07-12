@@ -62,6 +62,8 @@ def compare():
 def clearsaved():
     process = subprocess.Popen("tools/clearsaved.sh")
 
+def lenpatch():
+    process = subprocess.Popen("tools/lenpatch.sh")
 
 
 app = App(bg="grey", title="Alta E-Solutions BIOS HAX", height=600, width=900, layout="grid")
@@ -144,12 +146,14 @@ button5_1 = PushButton(box5, width=20, text="Clear Files/Reset", command=clearfi
 button5_2 = PushButton(box5, width=20, text="Open Dell Unlock Site", command=dellsite)
 button5_3 = PushButton(box5, width=20, text="Intel me_cleaner", command=meclean)
 button5_4 = PushButton(box5, width=20, text="Compare 2 Files", command=compare)
-button5_5 = PushButton(box5, width=20, text="Delete Saved Items", command=clearsaved)
+button5_5 = PushButton(box5, width=20, text="Lenovo File Patch", command=lenpatch)
+button5_6 = PushButton(box5, width=20, text="Delete Saved Items", command=clearsaved)
 button5_1.bg = "#ffadad"
 button5_2.bg = "#ddeddd"
 button5_3.bg = "#b7c4b7"
 button5_4.bg = "#ddeddd"
-button5_5.bg = "#ffadad"
+button5_5.bg = "#b7c4b7"
+button5_6.bg = "#ffadad"
 
 picture2 = Picture(box6, image="media/alogo.png")
 

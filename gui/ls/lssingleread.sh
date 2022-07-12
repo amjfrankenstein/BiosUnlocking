@@ -1,19 +1,23 @@
 #!/bin/bash
+googspeak "reading chip type" 2>/dev/null
 ./ls/getchip.sh
 ./ls/editchip1.sh
 ./ls/editchip2.sh
 chip=$(cat ls/unl/chip2.out)
+googspeak "choose filename" 2>/dev/null &
 filename=$(yad --entry --title="Name File" --text="Choose file name." --width=300 --center)
 case $? in
-	0) flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=12000 -c $chip -r 'ls/unl/'$filename | zenity --progress --title="Reading Chip..." --text="Reading $chip..." --width=300 --auto-close --auto-kill --pulsate --time-remaining --percentage=100
+	0) googspeak "writing chip data to $filename" 2>/dev/null &
+	   flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=12000 -c $chip -r 'ls/unl/'$filename | zenity --progress --title="Reading Chip..." --text="Reading $chip..." --width=300 --auto-close --auto-kill --pulsate --time-remaining --percentage=100
 	case $? in
 		0) 
 		;;
-		1) $1
+		1) kill $$ && $1
 		;;
-		*) $1
+		*) kill $$ && $1
 		;;
 	esac
+		googspeak "bin file saved" 2>/dev/null &
 	   	zenity --height=100 --width=300 --info --text=$filename" Saved."
 	;;
 	1) $1

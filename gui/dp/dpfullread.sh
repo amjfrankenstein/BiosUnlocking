@@ -1,37 +1,29 @@
 #!/bin/bash
-
-(dpcmd -d 2>&1 | tee dp/unl/out.out) 2>/dev/null
-
+googspeak "reading chip type" 2>/dev/null &
+dpcmd -d > dp/unl/out.out
 tail -n3 dp/unl/out.out | head -n1 > dp/unl/out1.out
-
-rm dp/unl/out.out
-
+rm dp/unl/out.out 2>/dev/null
 cat dp/unl/out1.out | head -n1 | awk '{print $1;}' > dp/unl/chip.out
-
-rm dp/unl/out1.out
-
+rm dp/unl/out1.out 2>/dev/null
 if grep -q Error "dp/unl/chip.out"; then
-    zenity --height=100 --width=300 --error --text="Failed to read chip"
+	googspeak "failed to read chip" 2>/dev/null &    
+	zenity --height=100 --width=300 --error --text="Failed to read chip"
     kill $$
 else
     chip=$(cat dp/unl/chip.out)
 fi
-
-echo "::::::::::::FIRST:::READ:::::::::::::::"
-
+googspeak "reading chip first pass" 2>/dev/null &
 dpcmd --type $chip -r dp/unl/fullread1.bin | zenity --progress --title="First Reading..." --text="Reading chip..." --width=300 --auto-close --auto-kill --pulsate --time-remaining
-
-echo ":::::::::::SECOND::::READ::::::::::::::"
-
+googspeak "reading chip second pass" 2>/dev/null &
 dpcmd --type $chip -r dp/unl/fullread2.bin| zenity --progress --title="Second Reading..." --text="Reading chip again..." --width=300 --auto-close --auto-kill --pulsate --time-remaining
-
-echo "::::::::::::::COMPARING::::::::::::::::"
-
+zenity --height=100 --width=300 --timeout=2 --info --text="comparing files" &
+googspeak "comparing files" 2>/dev/null 
 difference=$(diff dp/unl/fullread1.bin dp/unl/fullread2.bin)
-
 if [ -z "$difference" ]
 then
-    zenity --height=100 --width=300 --info --text="Files Match."
+	googspeak "bin files match, successful read" 2>/dev/null &    
+	zenity --height=100 --width=300 --info --text="Files Match."
 else
+	googspeak "bin files do not match" 2>/dev/null &
     zenity --height=100 --width=300 --warning --text="Files do not Match."
 fi
